@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+/*
+ * Varelon design tokens. See DESIGN_SYSTEM.md for usage rules.
+ * Palette: cool paper + green-charcoal ink, one accent (signal green),
+ * and "frost" blue reserved for cold-chain / temperature meaning only.
+ */
+
+/* Devices with a real hover pointer (mouse/trackpad). Hover-only reveals must
+   use this so touch users always see the content. */
+@custom-variant can-hover (@media (hover: hover) and (pointer: fine));
+
+@theme {
+  --color-ink-950: #0b0f0d;
+  --color-ink-900: #111714;
+  --color-ink-800: #1a221e;
+  --color-ink-700: #27312c;
+  --color-ink-600: #3a4540;
+
+  --color-steel-500: #5c6661;
+  --color-steel-400: #8a938e;
+  --color-steel-300: #b3bab5;
+
+  --color-paper: #f4f5f2;
+  --color-paper-2: #e9ece7;
+  --color-line: #d5dad4;
+  --color-line-dark: #2c3631;
+
+  --color-signal: #1b7a51;
+  --color-signal-deep: #135c3c;
+  --color-signal-bright: #6ccb98;
+
+  --color-frost: #2f5f80;
+  --color-frost-bright: #8fb8d6;
+
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --radius-none: 0;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --breakpoint-3xl: 1920px;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--color-signal);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+
+  .on-dark :focus-visible {
+    outline-color: var(--color-signal-bright);
+  }
+}
+
+/* Fluid type scale */
+@utility text-display {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 1.5rem + 4vw, 5.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+  font-stretch: 112%;
+}
+
+@utility text-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 1.45rem + 3.2vw, 4.25rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  font-stretch: 108%;
+}
+
+@utility text-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 1.3rem + 2.3vw, 3.25rem);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  font-stretch: 105%;
+}
+
+@utility text-h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 1.1rem + 0.9vw, 1.85rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+
+@utility text-statement {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 1.1rem + 2vw, 2.85rem);
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+@utility text-lead {
+  font-size: clamp(1.075rem, 1rem + 0.35vw, 1.3rem);
+  line-height: 1.55;
+}
+
+@utility text-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@utility container-site {
+  width: 100%;
+  max-width: 1360px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (width >= 48rem) {
+    padding-inline: 2rem;
+  }
+  @media (width >= 80rem) {
+    padding-inline: 3rem;
+  }
+}
+
+@utility section-y {
+  padding-block: clamp(5rem, 3rem + 7vw, 10rem);
+}
+
+/* Scroll reveal: elements start hidden only when JS has marked the page ready,
+   so content is always visible without JS. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s var(--ease-out-expo),
+    transform 0.9s var(--ease-out-expo);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js [data-reveal][data-revealed="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+.js [data-reveal="image"] {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(12% 0 0 0);
+  transition: clip-path 1.2s var(--ease-out-expo);
+}
+
+.js [data-reveal="image"] img {
+  transform: scale(1.08);
+  transition: transform 1.6s var(--ease-out-expo);
+}
+
+.js [data-reveal="image"][data-revealed="true"] {
+  clip-path: inset(0 0 0 0);
+}
+
+.js [data-reveal="image"][data-revealed="true"] img {
+  transform: scale(1);
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes hero-settle {
+  from {
+    transform: scale(1.07);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero-rise {
+  animation: hero-rise 1s var(--ease-out-expo) both;
+  animation-delay: var(--delay, 0ms);
+}
+
+.hero-settle {
+  animation: hero-settle 2.4s var(--ease-out-expo) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .js [data-reveal],
+  .js [data-reveal="image"],
+  .js [data-reveal="image"] img {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+}
