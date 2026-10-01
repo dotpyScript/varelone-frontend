@@ -1,0 +1,132 @@
+{
+  "/images/Camera-Installation.jpeg": {
+    "base": "/images/optimized/camera-installation",
+    "width": 1376,
+    "height": 768,
+    "widths": [
+      640,
+      960,
+      1280,
+      1376
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACwAQCdASoQAAkAA4BaJQBdgBhmDF9YAM4+Z8au+nnf1nw7xXyTqjg76yTJCWNhpg+pB1J9Gg3u3ixOr9W0H/P+DgLfmJv2bidY6X5oqSJQAA=="
+  },
+  "/images/cold-chain-logistics.jpeg": {
+    "base": "/images/optimized/cold-chain-logistics",
+    "width": 1536,
+    "height": 1024,
+    "widths": [
+      640,
+      960,
+      1280,
+      1536
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQAgCdASoQAAsAA4BaJZwAD40wFXSKfiQAAP72Ci1AnPW7/D0YNv9AwXOzov4e0mVvvF4CDdRaWTBInyD/bP92v+m18+/D4iSo8P8H7ueNID3TKmtKfnX3ehrX5LxRVpgQAA=="
+  },
+  "/images/electrical-installation.jpeg": {
+    "base": "/images/optimized/electrical-installation",
+    "width": 1600,
+    "height": 892,
+    "widths": [
+      640,
+      960,
+      1280,
+      1600
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAQCdASoQAAkAA4BaJZQCdADHigIYAAD+9hOMipS2eRVFtDTaV+v5qibYzxsLV1NixpE4zSAZrt6/qWRyJJuuPjZXJ1MwAAA="
+  },
+  "/images/Energy efficiency.png": {
+    "base": "/images/optimized/energy-efficiency",
+    "width": 1536,
+    "height": 1024,
+    "widths": [
+      640,
+      960,
+      1280,
+      1536
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQAgCdASoQAAsAA4BaJbACdAEfhzoVvaAAAP7uLhFo7t0NAQueZjyXl30VbLD3IIxpmOwRHfXM1LJwBpm/nbxKMnvP2FdHxIsG5dlNWuW+srZ5s7ky6pohmPY5fri1r75d/4VbZAAAAA=="
+  },
+  "/images/energy-storage.jpeg": {
+    "base": "/images/optimized/energy-storage",
+    "width": 1408,
+    "height": 768,
+    "widths": [
+      640,
+      960,
+      1280,
+      1408
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAQCdASoQAAkAA4BaJZwAApNWq3AAAP7rmb1W2xWnYydcpZdYvYdIatbNnRV5ILI/pDBQ1mRMMyBxBwlmTOaKmiV2KFqW6wAAAA=="
+  },
+  "/images/Gas & Alternative Fuels.jpeg": {
+    "base": "/images/optimized/gas-alternative-fuels",
+    "width": 1600,
+    "height": 1066,
+    "widths": [
+      640,
+      960,
+      1280,
+      1600
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAQCdASoQAAsAA4BaJQBOgB5z1A+tIAD+8wPXuySo1yfSA1/XrNMcGr7ar0+qcZinxXgV5nH3dhVa3tUCrBEANHc6yWUGKxj1NeAA"
+  },
+  "/images/hero-carocel.png": {
+    "base": "/images/optimized/hero-carocel",
+    "width": 1672,
+    "height": 941,
+    "widths": [
+      640,
+      960,
+      1280,
+      1672
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADwAQCdASoQAAkAA4BaJbACdAEPT2cVkGAA/vPPVCda3vpxmkn7gIwOtLdp0XVvhw5wPNt2Ec5Xi7CM+DgPnSsZmNv8ryKxZ2awRIMS9h4AAA=="
+  },
+  "/images/ice-block-machine.jpeg": {
+    "base": "/images/optimized/ice-block-machine",
+    "width": 1408,
+    "height": 768,
+    "widths": [
+      640,
+      960,
+      1280,
+      1408
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAQCdASoQAAkAA4BaJZQCdAEO5MauzoAA/udhnODAM4+oRnJxgMGvY589gzpyq/CgAA=="
+  },
+  "/images/Solar-installation.jpeg": {
+    "base": "/images/optimized/solar-installation",
+    "width": 1408,
+    "height": 768,
+    "widths": [
+      640,
+      960,
+      1280,
+      1408
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAQAgCdASoQAAkAA4BaJZACdAEPCHUboEYAAPzXQgy25Vx2bcRXrSS7TUsOeqjVOZTfXdDpY+7vRYlquMxGnWSYv9w8b5mXhvXsLbugGJYhDkqNgHcQwonY5A/OQZaAAAA="
+  },
+  "/images/varelon-cold room.jpeg": {
+    "base": "/images/optimized/varelon-cold-room",
+    "width": 1200,
+    "height": 896,
+    "widths": [
+      640,
+      960,
+      1200
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAwAgCdASoQAAwAA4BaJZQCdAYvDjaV7b38AAD+9R24EZOK0giLhbSwg0HVgNOICga9nXPGabFNBrxWe8YVeHmmpHeb3HcscXJGXn8Y3r2RVewgAAA="
+  },
+  "/images/varelon-refrigirator.jpeg": {
+    "base": "/images/optimized/varelon-refrigirator",
+    "width": 1184,
+    "height": 896,
+    "widths": [
+      640,
+      960,
+      1184
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAACwAQCdASoQAAwAA4BaJaQAAudU3pvAAP7tNzZCmN6Gq4cRdDfHCptAAAA="
+  }
+}

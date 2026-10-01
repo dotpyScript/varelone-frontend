@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ButtonLink } from "@/components/ui/button";
-import { images } from "@/content/images";
+import { blurProps, images } from "@/content/images";
 import { ctaLabels } from "@/content/site";
 
 export function Hero() {
@@ -13,6 +13,7 @@ export function Hero() {
         preload
         fetchPriority="high"
         sizes="100vw"
+        {...blurProps(images.hero)}
         className="hero-settle -z-10 object-cover object-[60%_center]"
       />
       {/* Legibility scrim: darkest where the text sits, bottom-left. */}

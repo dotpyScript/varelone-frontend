@@ -58,7 +58,7 @@ export const coldChainSolutions: Solution[] = [
       "Commercial refrigeration",
       "Sites with unreliable grid power",
     ],
-    image: images.refrigerationPlant,
+    image: images.refrigeration,
   },
   {
     slug: "solar-ice-block-machines",
@@ -77,7 +77,7 @@ export const coldChainSolutions: Solution[] = [
       "Food distribution",
       "Commercial ice production",
     ],
-    image: images.market,
+    image: images.iceBlocks,
   },
   {
     slug: "cold-chain-logistics",
@@ -133,7 +133,7 @@ export const cameraInstallation: Solution = {
     "Energy infrastructure",
     "Agricultural facilities and business premises",
   ],
-  image: images.installation,
+  image: images.cameraInstall,
 };
 
 export const coldChainFlow = [

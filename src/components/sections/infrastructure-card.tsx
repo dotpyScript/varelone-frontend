@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { blurProps } from "@/content/images";
 import type { Solution } from "@/content/solutions";
 
 /**
@@ -26,6 +27,7 @@ export function InfrastructureCard({ solution }: { solution: Solution }) {
             alt={solution.image.alt}
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
+            {...blurProps(solution.image)}
             className="object-cover"
           />
         </div>

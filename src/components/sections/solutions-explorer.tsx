@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useId, useRef, useState, type KeyboardEvent } from "react";
 import { ArrowRight } from "lucide-react";
+import { blurProps } from "@/content/images";
 import type { Solution } from "@/content/solutions";
 import { cn } from "@/lib/cn";
 
@@ -102,6 +103,7 @@ export function SolutionsExplorer({ solutions }: { solutions: Solution[] }) {
                 aria-hidden={i !== active}
                 fill
                 sizes="(min-width: 1360px) 760px, 58vw"
+                {...blurProps(s.image)}
                 className={cn(
                   "object-cover transition-[opacity,transform] duration-700 ease-[var(--ease-out-expo)]",
                   i === active ? "scale-100 opacity-100" : "scale-[1.04] opacity-0",
@@ -143,6 +145,7 @@ export function SolutionsExplorer({ solutions }: { solutions: Solution[] }) {
                 alt={s.image.alt}
                 fill
                 sizes="(min-width: 640px) 50vw, 100vw"
+                {...blurProps(s.image)}
                 className="object-cover"
               />
             </div>

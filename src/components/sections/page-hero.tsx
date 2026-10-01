@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import type { SiteImage } from "@/content/images";
+import { blurProps, type SiteImage } from "@/content/images";
 
 type Props = {
   title: ReactNode;
@@ -22,6 +22,7 @@ export function PageHero({ title, intro, image, children }: Props) {
             preload
             fetchPriority="high"
             sizes="100vw"
+            {...blurProps(image)}
             className="hero-settle -z-10 object-cover"
           />
           <div

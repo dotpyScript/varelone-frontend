@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { images } from "@/content/images";
+import { blurProps, images } from "@/content/images";
 import { coldChainFlow } from "@/content/solutions";
 import { cn } from "@/lib/cn";
 
@@ -14,7 +14,7 @@ const stepImages = [
   images.pylonsDay,
   images.refrigerationPlant,
   images.coldStorage,
-  images.market,
+  images.iceBlocks,
   images.logistics,
   images.produce,
 ];
@@ -68,6 +68,7 @@ export function ColdChainStory() {
                     alt=""
                     fill
                     sizes="(min-width: 1360px) 620px, 46vw"
+                    {...blurProps(img)}
                     className={cn(
                       "object-cover transition-[opacity,transform] duration-1000 ease-[var(--ease-out-expo)]",
                       i === active ? "scale-100 opacity-100" : "scale-[1.05] opacity-0",

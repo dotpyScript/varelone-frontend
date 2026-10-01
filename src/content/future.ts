@@ -36,6 +36,7 @@ export const futureAreas: FutureArea[] = [
       "Commercial and industrial storage",
       "Battery management systems",
     ],
+    image: images.energyStorage,
   },
   {
     slug: "power-infrastructure",
@@ -61,6 +62,7 @@ export const futureAreas: FutureArea[] = [
       "Energy-efficient equipment",
       "Industrial and building energy optimisation",
     ],
+    image: images.energyEfficiency,
   },
   {
     slug: "energy-agriculture",
@@ -97,6 +99,7 @@ export const futureAreas: FutureArea[] = [
       "Gas processing and distribution",
       "Fuel logistics and storage",
     ],
+    image: images.gasFuels,
   },
 ];
 

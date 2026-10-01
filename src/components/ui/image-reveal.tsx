@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { SiteImage } from "@/content/images";
+import { blurProps, type SiteImage } from "@/content/images";
 import { cn } from "@/lib/cn";
 
 type Props = {
@@ -32,6 +32,8 @@ export function ImageReveal({
         fill
         sizes={sizes}
         preload={preload}
+        {...blurProps(image)}
+        style={image.position ? { objectPosition: image.position } : undefined}
         className={cn("object-cover", imgClassName)}
       />
     </div>

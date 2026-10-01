@@ -1,11 +1,31 @@
+import manifest from "./image-manifest.json";
+
 /**
  * Every image on the site is referenced from here so photography can be
  * swapped for Varelon's own project photography in one place.
- * All are Unsplash photos, chosen to match the section they illustrate.
+ * Varelon's own photos live in /public/images (run `pnpm images` after adding
+ * one); the rest are Unsplash photos chosen to match their section.
  */
-export type SiteImage = { src: string; alt: string };
+export type SiteImage = {
+  src: string;
+  alt: string;
+  blurDataURL?: string;
+  /** CSS object-position, for photos whose subject must survive cropping. */
+  position?: string;
+};
 
 const u = (id: string) => `https://images.unsplash.com/${id}`;
+
+const local = (file: string, alt: string): SiteImage => {
+  const src = `/images/${file}`;
+  const entry = (manifest as Record<string, { blurDataURL: string }>)[src];
+  if (!entry) throw new Error(`${src} is not optimised yet. Run \`pnpm images\`.`);
+  return { src, alt, blurDataURL: entry.blurDataURL };
+};
+
+/** Spread onto next/image so local photos show a blurred preview while loading. */
+export const blurProps = (image: SiteImage) =>
+  image.blurDataURL ? { placeholder: "blur" as const, blurDataURL: image.blurDataURL } : {};
 
 export const images = {
   hero: {
@@ -24,22 +44,16 @@ export const images = {
     src: u("photo-1513828583688-c52646db42da"),
     alt: "Industrial refrigeration compressor and stainless steel pipework",
   },
-  coldStorage: {
-    src: u("photo-1616401784845-180882ba9ba8"),
-    alt: "Storage facility with stacked pallets and a forklift",
-  },
-  market: {
-    src: u("photo-1488459716781-31db52582fe9"),
-    alt: "Fresh produce laid out at a busy food market",
-  },
-  logistics: {
-    src: u("photo-1601584115197-04ecc0da31d7"),
-    alt: "Truck travelling along a road through open savanna",
-  },
-  installation: {
-    src: u("photo-1621905251189-08b45d6a269e"),
-    alt: "Technician in a hard hat working on a wall-mounted electrical installation",
-  },
+  refrigeration: local(
+    "varelon-refrigirator.jpeg",
+    "Chest refrigeration unit with a digital temperature controller",
+  ),
+  coldStorage: local(
+    "varelon-cold room.jpeg",
+    "Walk-in cold room with its door open onto racks of fresh produce",
+  ),
+  iceBlocks: local("ice-block-machine.jpeg", "Clear blocks of ice on a stainless steel table"),
+  logistics: local("cold-chain-logistics.jpeg", "Refrigerated truck in Varelon Energy livery"),
   engineering: {
     src: u("photo-1504328345606-18bbc8c9d7d1"),
     alt: "Welder at work with sparks in an industrial workshop",
@@ -64,16 +78,36 @@ export const images = {
     src: u("photo-1464226184884-fa280b87c399"),
     alt: "Baskets of fresh vegetables including carrots, chillies and gourds",
   },
+  energyStorage: local(
+    "energy-storage.jpeg",
+    "Concept image of an open battery storage cabinet with rows of cabled battery modules",
+  ),
+  energyEfficiency: {
+    ...local(
+      "Energy efficiency.png",
+      "Light bulb with a green seedling inside, set against solar panels and wind turbines, with the words “Energy Efficiency: smarter energy use today, a cleaner, more sustainable tomorrow”",
+    ),
+    // The artwork's text sits on the left edge, so crop from the right.
+    position: "left center",
+  },
+  gasFuels: local(
+    "Gas & Alternative Fuels.jpeg",
+    "Concept image of a CNG fuelling station at dusk with a truck and pickup at the pumps",
+  ),
   evCharging: {
     src: u("photo-1593941707882-a5bba14938c7"),
     alt: "Electric vehicle connected to a charging cable",
   },
-  commercialSolar: {
-    src: u("photo-1611365892117-00ac5ef43c90"),
-    alt: "Solar panels installed beside a commercial building at dusk",
-  },
-  solarInstall: {
-    src: u("photo-1559302504-64aae6ca6b6d"),
-    alt: "Gloved hands connecting wiring on a solar panel installation",
-  },
+  commercialSolar: local(
+    "Solar-installation.jpeg",
+    "Installer in a safety harness fixing solar panels to a rooftop",
+  ),
+  solarInstall: local(
+    "Solar-installation.jpeg",
+    "Installer in a safety harness fixing solar panels to a rooftop",
+  ),
+  cameraInstall: local(
+    "Camera-Installation.jpeg",
+    "Varelon technician wiring an electronic access-control unit on an office door",
+  ),
 } satisfies Record<string, SiteImage>;

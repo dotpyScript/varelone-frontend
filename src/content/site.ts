@@ -22,6 +22,7 @@ export const ctaLabels = {
 export type NavItem = { label: string; href: string };
 
 export const primaryNav: NavItem[] = [
+  { label: "Home", href: "/" },
   { label: "Solutions", href: "/solutions" },
   { label: "About", href: "/about" },
   { label: "Our Approach", href: "/approach" },

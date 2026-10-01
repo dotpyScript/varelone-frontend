@@ -1,16 +1,32 @@
+import Image from "next/image";
 import { cn } from "@/lib/cn";
 
 /**
- * Interim wordmark. No official Varelon logo was supplied; replace this
- * component with the brand asset when it is available.
+ * Brand mark (cropped from the official logo in /public/favicon) plus a live-text
+ * wordmark that inherits the surrounding colour. The mark's dark-green stroke
+ * disappears on ink backgrounds, so a reversed version is swapped in on `.on-dark`.
  */
 export function Logo({ className }: { className?: string }) {
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <svg viewBox="0 0 24 24" aria-hidden className="size-6 shrink-0" fill="none">
-        <path d="M2 3h6.5L12 14.5 15.5 3H22L14.5 21h-5L2 3Z" fill="currentColor" />
-        <path d="M15.5 3H22l-3.2 7.6h-6.1L15.5 3Z" className="fill-signal-bright" />
-      </svg>
+      <Image
+        src="/brand/varelon-mark.png"
+        alt=""
+        width={122}
+        height={96}
+        loading="eager"
+        unoptimized
+        className="h-8 w-auto shrink-0 in-[.on-dark]:hidden"
+      />
+      <Image
+        src="/brand/varelon-mark-reversed.png"
+        alt=""
+        width={122}
+        height={96}
+        loading="eager"
+        unoptimized
+        className="hidden h-8 w-auto shrink-0 in-[.on-dark]:block"
+      />
       <span className="font-display text-[1.05rem] leading-none font-semibold tracking-[0.14em] [font-stretch:115%]">
         VARELON
         <span className="sr-only"> Energy</span>

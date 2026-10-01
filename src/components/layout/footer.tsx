@@ -57,7 +57,10 @@ export function Footer() {
         <nav aria-label="Company" className="md:col-span-3">
           <h2 className="text-label text-steel-400">Company</h2>
           <ul className="mt-5 space-y-1">
-            {[...primaryNav.filter((i) => i.href !== "/solutions"), contactNav].map((item) => (
+            {[
+              ...primaryNav.filter((i) => i.href !== "/" && i.href !== "/solutions"),
+              contactNav,
+            ].map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}

@@ -52,6 +52,14 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   alternates: { canonical: "/" },
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.ico", sizes: "any" },
+      { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: { url: "/favicon/apple-touch-icon.png", sizes: "180x180" },
+  },
+  manifest: "/favicon/site.webmanifest",
 };
 
 export const viewport: Viewport = {

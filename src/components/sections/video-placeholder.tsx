@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import { Play } from "lucide-react";
 import { toast } from "sonner";
-import type { SiteImage } from "@/content/images";
+import { blurProps, type SiteImage } from "@/content/images";
 
 type Props = {
   poster: SiteImage;
@@ -56,6 +56,7 @@ export function VideoPlaceholder({ poster, title, caption, videoSrc }: Props) {
                   alt={poster.alt}
                   fill
                   sizes="(min-width: 1360px) 1264px, 100vw"
+                  {...blurProps(poster)}
                   className="object-cover"
                 />
                 <div aria-hidden className="absolute inset-0 bg-ink-950/35" />
