@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Providers } from "@/components/layout/providers";
 import { RevealObserver } from "@/components/motion/reveal-observer";
-import { site } from "@/content/site";
+import { openingHours, site } from "@/content/site";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -66,6 +66,9 @@ export const viewport: Viewport = {
   themeColor: "#0b0f0d",
 };
 
+const { address, email, phoneHref } = site.contact;
+const telephone = phoneHref.replace("tel:", "");
+
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -74,6 +77,30 @@ const organizationJsonLd = {
   url: site.url,
   description: site.description,
   areaServed: { "@type": "Country", name: "Nigeria" },
+  email,
+  telephone,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: address.street,
+    addressLocality: `${address.district}, ${address.city}`,
+    addressRegion: address.region,
+    addressCountry: address.countryCode,
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    email,
+    telephone,
+    areaServed: address.countryCode,
+    hoursAvailable: openingHours
+      .filter((h) => h.opens)
+      .map(({ dayOfWeek, opens, closes }) => ({
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek,
+        opens,
+        closes,
+      })),
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

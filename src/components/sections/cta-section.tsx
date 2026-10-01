@@ -5,12 +5,15 @@ export function CTASection({
   title = "Have an energy or infrastructure challenge?",
   subtitle = "Let's build a practical solution around it.",
   as: Tag = "h2",
+  showDetails = true,
 }: {
   title?: string;
   subtitle?: string;
   as?: "h1" | "h2";
+  /** Hide the email and phone where the page shows them in full elsewhere. */
+  showDetails?: boolean;
 }) {
-  const { email, phone } = site.contact;
+  const { email, phone, phoneHref } = site.contact;
   return (
     <section
       id="contact"
@@ -26,31 +29,27 @@ export function CTASection({
             Tell us what you need to power, cool or protect. We will come back to you to talk it
             through.
           </p>
-          {(email || phone) && (
+          {showDetails && (
             <dl className="mt-10 space-y-4">
-              {email && (
-                <div>
-                  <dt className="text-sm text-steel-400">Email</dt>
-                  <dd>
-                    <a href={`mailto:${email}`} className="text-lg text-white hover:underline">
-                      {email}
-                    </a>
-                  </dd>
-                </div>
-              )}
-              {phone && (
-                <div>
-                  <dt className="text-sm text-steel-400">Phone</dt>
-                  <dd>
-                    <a
-                      href={`tel:${phone.replace(/\s/g, "")}`}
-                      className="text-lg text-white hover:underline"
-                    >
-                      {phone}
-                    </a>
-                  </dd>
-                </div>
-              )}
+              <div>
+                <dt className="text-sm text-steel-400">Telephone</dt>
+                <dd>
+                  <a href={phoneHref} className="text-lg text-white hover:underline">
+                    {phone}
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt className="text-sm text-steel-400">Email</dt>
+                <dd>
+                  <a
+                    href={`mailto:${email}`}
+                    className="text-lg wrap-anywhere text-white hover:underline"
+                  >
+                    {email}
+                  </a>
+                </dd>
+              </div>
             </dl>
           )}
         </div>

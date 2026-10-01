@@ -5,13 +5,49 @@ export const site = {
   description:
     "Varelon Energy NG LTD delivers solar-powered cold rooms, refrigeration, ice block machines, cold-chain logistics, solar installation and camera installation for businesses and institutions in Nigeria.",
   country: "Nigeria",
-  // Contact details are rendered only when supplied. Do not add placeholder values.
+  // Supplied by the client. Never replace with placeholder values.
   contact: {
-    email: null as string | null,
-    phone: null as string | null,
-    address: null as string | null,
+    email: "varelon.energy.ng@gmail.com",
+    phone: "+234 906 550 5547",
+    phoneHref: "tel:+2349065505547",
+    address: {
+      street: "No. 18 Iro Dan Musa Street",
+      district: "Asokoro",
+      city: "Abuja",
+      region: "FCT",
+      country: "Nigeria",
+      countryCode: "NG",
+    },
+    mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      "18 Iro Dan Musa Street, Asokoro, Abuja, Nigeria",
+    )}`,
   },
 } as const;
+
+/** Head office opening hours. `opens`/`closes` (24h) feed the structured data. */
+export const openingHours: {
+  days: string;
+  hours: string;
+  dayOfWeek?: string[];
+  opens?: string;
+  closes?: string;
+}[] = [
+  {
+    days: "Monday – Friday",
+    hours: "8:00am – 5:00pm",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "08:00",
+    closes: "17:00",
+  },
+  {
+    days: "Saturday",
+    hours: "9:00am – 3:00pm",
+    dayOfWeek: ["Saturday"],
+    opens: "09:00",
+    closes: "15:00",
+  },
+  { days: "Sunday", hours: "Closed" },
+];
 
 // One label per intent across the whole site (nav, hero, CTAs, footer).
 export const ctaLabels = {

@@ -5,7 +5,7 @@ import { contactNav, primaryNav, site } from "@/content/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
-  const { email, phone, address } = site.contact;
+  const { email, phone, phoneHref, address } = site.contact;
 
   return (
     <footer className="on-dark border-t border-line-dark bg-ink-950 text-steel-300">
@@ -18,24 +18,22 @@ export function Footer() {
             Practical energy and infrastructure solutions for businesses, producers and institutions
             in Nigeria.
           </p>
-          {(email || phone || address) && (
-            <address className="mt-8 space-y-1 not-italic">
-              {email && (
-                <a className="block text-white hover:underline" href={`mailto:${email}`}>
-                  {email}
-                </a>
-              )}
-              {phone && (
-                <a
-                  className="block text-white hover:underline"
-                  href={`tel:${phone.replace(/\s/g, "")}`}
-                >
-                  {phone}
-                </a>
-              )}
-              {address && <p>{address}</p>}
-            </address>
-          )}
+          <address className="mt-8 space-y-1 not-italic">
+            <a className="block w-fit py-0.5 text-white hover:underline" href={phoneHref}>
+              {phone}
+            </a>
+            <a
+              className="block w-fit py-0.5 wrap-anywhere text-white hover:underline"
+              href={`mailto:${email}`}
+            >
+              {email}
+            </a>
+            <p className="pt-3">
+              {address.street}, {address.district}
+              <br />
+              {address.city}, {address.region}, {address.country}
+            </p>
+          </address>
         </div>
 
         <nav aria-label="Solutions" className="md:col-span-4">
