@@ -93,7 +93,7 @@ export const futureAreas: FutureArea[] = [
   {
     slug: "alternative-fuels",
     title: "Gas & Alternative Fuels",
-    line: "A longer-term strategic interest in gas and alternative fuels as part of Nigeria's energy mix.",
+    line: "A longer-term strategic interest in oil and gas and alternative fuels as part of Nigeria's energy mix.",
     scope: [
       "Natural gas, CNG, LNG and LPG",
       "Gas processing and distribution",
@@ -107,7 +107,7 @@ export const businessModel = [
   {
     key: "develop",
     title: "Develop",
-    body: "Identifying energy and infrastructure needs, then shaping projects around them.",
+    body: "Identifying energy and infrastructure needs, advising on efficiency opportunities and the right technology, then shaping projects around them.",
     horizon: "growing" as const,
   },
   {
@@ -131,7 +131,7 @@ export const businessModel = [
   {
     key: "partner",
     title: "Partner",
-    body: "Working with technology providers, contractors, investors and development organisations on shared projects.",
+    body: "Working with private businesses, industries, government institutions, development organisations, investors, communities and technology providers to develop scalable energy solutions.",
     horizon: "growing" as const,
   },
   {

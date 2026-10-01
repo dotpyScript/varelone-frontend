@@ -8,12 +8,13 @@ import { CTASection } from "@/components/sections/cta-section";
 import { PageHero } from "@/components/sections/page-hero";
 import { VisionStatement } from "@/components/sections/vision-statement";
 import { images } from "@/content/images";
+import { approachStatement, companyOverview, longTermStrategy, objective } from "@/content/site";
 import { currentSolutions } from "@/content/solutions";
 
 export const metadata: Metadata = {
   title: "About Varelon Energy",
   description:
-    "Varelon Energy NG LTD is building an integrated energy and infrastructure business in Nigeria, starting with solar-powered cold-chain solutions.",
+    "Varelon Energy NG LTD is an integrated energy company developing reliable, affordable and sustainable energy solutions in Nigeria, starting with solar-powered cold-chain, solar installation and camera installation services.",
   alternates: { canonical: "/about" },
 };
 
@@ -23,7 +24,7 @@ export default function AboutPage() {
       <PageHero
         image={images.engineering}
         title="A practical starting point. A larger ambition."
-        intro="Varelon Energy NG LTD is building an integrated energy and infrastructure business focused on reliable, affordable and sustainable solutions."
+        intro={companyOverview}
       />
 
       {/* Who we are */}
@@ -33,16 +34,19 @@ export default function AboutPage() {
             Who we are
           </h2>
           <div className="space-y-6 md:col-span-7 md:col-start-6" data-reveal>
-            <p className="text-statement">
-              We are an emerging Nigerian energy company solving practical energy problems through
-              technology, engineering and sustainable infrastructure.
-            </p>
+            <p className="text-statement">{objective}</p>
             <p className="text-lg text-steel-500">
               Our work begins where unreliable power costs businesses the most: keeping products
               cold, preserved and moving. We combine solar energy with refrigeration, storage, ice
               production and logistics. We also install solar power systems for businesses and
               facilities, and the cameras that help protect the sites around them. We do not sell
               products: every solution is designed, installed and supported as a service.
+            </p>
+            <p className="text-lg text-steel-500">
+              From there, we are building across the wider energy value chain: renewable energy,
+              power generation, energy storage, energy infrastructure, energy efficiency, clean
+              transportation, oil and gas, and emerging energy technologies. These are areas we are
+              expanding into, not services we offer today.
             </p>
           </div>
         </div>
@@ -92,13 +96,9 @@ export default function AboutPage() {
           <div className="flex flex-col justify-center gap-14 md:col-span-5 md:col-start-8">
             <div data-reveal>
               <h2 className="text-h3">How we work</h2>
-              <p className="mt-4 text-lg text-steel-500">
-                We bring together engineering expertise, technology, project development, energy
-                services and strategic partnerships, so each solution is designed around what the
-                customer actually needs rather than around a product.
-              </p>
+              <p className="mt-4 text-lg text-steel-500">{approachStatement}</p>
               <ButtonLink href="/approach" variant="text" className="mt-2">
-                Our approach
+                Our approach and business model
               </ButtonLink>
             </div>
             <div data-reveal>
@@ -106,9 +106,7 @@ export default function AboutPage() {
                 Where we&apos;re going
               </h2>
               <p className="mt-4 text-lg text-steel-500">
-                Over time, we intend to work across more of the energy value chain: renewable
-                energy, storage, power infrastructure, efficiency, agriculture and clean mobility.
-                These are areas of expansion, and we present them that way.
+                {longTermStrategy} These are areas of expansion, and we present them that way.
               </p>
               <ButtonLink href="/future-energy" variant="text" className="mt-2">
                 Future energy

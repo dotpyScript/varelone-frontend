@@ -8,9 +8,11 @@ export function Positioning() {
           What Varelon does
         </h2>
         <p className="max-w-[28ch] text-statement text-ink-900 md:max-w-[34ch]" data-reveal>
-          Varelon Energy develops practical energy and infrastructure solutions{" "}
+          Varelon Energy is an integrated energy company developing reliable, affordable and
+          sustainable energy solutions{" "}
           <span className="text-steel-400">
-            that improve reliability, reduce operating challenges and support sustainable growth.
+            that help organisations reduce energy costs, keep operations running and move toward
+            cleaner power.
           </span>
         </p>
 

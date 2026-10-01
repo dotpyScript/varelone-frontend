@@ -5,6 +5,7 @@ import { HowWeWork } from "@/components/sections/how-we-work";
 import { PageHero } from "@/components/sections/page-hero";
 import { approachPillars } from "@/content/future";
 import { images } from "@/content/images";
+import { approachStatement } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Our Approach",
@@ -19,7 +20,7 @@ export default function ApproachPage() {
       <PageHero
         image={images.solarInstall}
         title="A solution integrator, not an equipment reseller."
-        intro="We combine engineering, technology, project development and partnerships to deliver solutions tailored to how each customer actually operates."
+        intro={approachStatement}
       />
 
       <HowWeWork showLink={false} />

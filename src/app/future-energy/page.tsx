@@ -11,7 +11,7 @@ import { images } from "@/content/images";
 export const metadata: Metadata = {
   title: "Future Energy: Our Long-Term Direction",
   description:
-    "Varelon Energy's long-term strategy: expanding from solar cold-chain infrastructure toward renewable energy, storage, power infrastructure, efficiency, agriculture and clean mobility.",
+    "Varelon Energy's long-term strategy: building an integrated energy group, expanding from solar cold-chain infrastructure toward renewable energy, power generation, storage, energy infrastructure, efficiency, agriculture, clean mobility, and oil and gas.",
   alternates: { canonical: "/future-energy" },
 };
 
@@ -21,7 +21,7 @@ export default function FutureEnergyPage() {
       <PageHero
         image={images.pylons}
         title="Where Varelon is heading."
-        intro="As Varelon grows, we are expanding our capabilities across renewable energy, energy storage, efficient power systems, clean transportation and other emerging areas of the energy transition."
+        intro="As Varelon grows, we are expanding our capabilities across renewable energy, power generation, energy storage, energy infrastructure, energy efficiency, clean transportation, oil and gas, and emerging energy technologies."
       />
 
       {/* Today vs tomorrow, stated plainly */}
@@ -54,8 +54,13 @@ export default function FutureEnergyPage() {
             <StatusTag status="expansion" />
             <h2 className="mt-5 text-h3">What we are building toward</h2>
             <p className="mt-3 max-w-[46ch] text-steel-500">
-              The areas on this page. They describe strategy and intent, not services currently
-              available. We will update this page as capabilities become available.
+              An integrated energy group able to work across multiple segments of the energy
+              industry, with a strong focus on renewable energy, energy access, energy efficiency,
+              energy infrastructure and cleaner energy systems.
+            </p>
+            <p className="mt-3 max-w-[46ch] text-steel-500">
+              The areas below describe that strategy and intent, not services currently available.
+              We will update this page as capabilities become available.
             </p>
           </div>
         </div>

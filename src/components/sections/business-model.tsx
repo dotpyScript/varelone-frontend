@@ -44,8 +44,10 @@ export function BusinessModel() {
             Built to take part across the whole project lifecycle.
           </h2>
           <p className="mt-6 max-w-[60ch] text-lead text-steel-500">
-            Varelon&apos;s model is designed to span every stage, from first assessment to long-term
-            ownership. Some stages are active today; others are part of how we intend to grow.
+            Our model combines project development, engineering and installation, consulting,
+            operations and maintenance, energy-as-a-service, partnerships, infrastructure investment
+            and project ownership. Some stages are active today; others are part of how we intend to
+            grow.
           </p>
         </div>
 
