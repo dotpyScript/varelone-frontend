@@ -19,7 +19,7 @@ export default function ApproachPage() {
     <>
       <PageHero
         image={images.solarInstall}
-        title="A solution integrator, not an equipment reseller."
+        title="Every solution starts with the problem it has to solve."
         intro={approachStatement}
       />
 
