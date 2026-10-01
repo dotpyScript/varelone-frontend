@@ -1,5 +1,6 @@
 import { BeyondToday } from "@/components/sections/beyond-today";
 import { ColdChainStory } from "@/components/sections/cold-chain-story";
+import { ContactDetails } from "@/components/sections/contact-details";
 import { CTASection } from "@/components/sections/cta-section";
 import { CurrentSolutions } from "@/components/sections/current-solutions";
 import { EnergyAgriculture } from "@/components/sections/energy-agriculture";
@@ -26,7 +27,8 @@ export default function HomePage() {
       <EnergyAgriculture />
       <BeyondToday />
       <VisionStatement />
-      <CTASection />
+      <CTASection showDetails={false} />
+      <ContactDetails />
     </>
   );
 }
